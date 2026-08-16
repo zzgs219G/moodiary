@@ -48,7 +48,7 @@ jobs:
 
       - name: Build Editor
         run: |
-          corepack enable
+          corepack enable --pm-on-fail=ignore
           corepack pnpm -C packages/feature/moodiary_editor/editor install --frozen-lockfile
           corepack pnpm -C packages/feature/moodiary_editor/editor build
 
