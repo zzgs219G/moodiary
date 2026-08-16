@@ -47,12 +47,10 @@ jobs:
           node-version: 24
 
       - name: Build Editor
-        env:
-          COREPACK_ENABLE_STRICT: 0
         run: |
-          corepack enable
-          corepack pnpm -C packages/feature/moodiary_editor/editor install --frozen-lockfile
-          corepack pnpm -C packages/feature/moodiary_editor/editor build
+          pnpm -C packages/feature/moodiary_editor/editor install --frozen-lockfile
+          pnpm -C packages/feature/moodiary_editor/editor build
+
 
       - name: Set Up Rust
         working-directory: packages/foundation/moodiary_rust/rust
